@@ -1,0 +1,10 @@
+# Ambiente python
+.venv/
+venv/
+.env
+
+# Cache
+__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyb
