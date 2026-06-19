@@ -11,7 +11,7 @@ def create_time_windows(dados, janela_tempo=60):
   X = []
   y = []
   
-  # O loop vai andando um minuto por vez (Sliding Window)
+  # O loop vai andando um minuto por vez
   for i in range(len(dados) - janela_tempo):
     # Pega as 60 linhas anteriores (de i até i + 60) e todas as colunas (OHLCV)
     janela = dados[i:(i + janela_tempo), :]
@@ -41,7 +41,7 @@ def create_model_cnn(janela_tempo=60, num_features=5):
   model.add(layers.MaxPooling1D(pool_size=2))
   model.add(layers.Dropout(0.2))
   
-  # Em vez de LSTM, "achatamos" os dados para a camada Dense
+  # "Achatamento" os dados para a camada Dense
   model.add(layers.Flatten())
   
   model.add(layers.Dense(units=25, activation='relu'))
@@ -74,7 +74,7 @@ def create_model_hybrid(janela_tempo=60, num_features=5):
   model = models.Sequential()
   
   # === PARTE 1: CNN (Extração de Padrões Espaciais/Morfológicos) ===
-  # O Conv1D vai passar como se fosse um "scanner" analisando os formatos dos candles
+  # O Conv1D vai passar analisando os formatos dos candles
   model.add(layers.Conv1D(
     filters=64,
     kernel_size=3,
@@ -96,10 +96,10 @@ def create_model_hybrid(janela_tempo=60, num_features=5):
   # === PARTE 3: Camadas Densas (Tomada de Decisão) ===
   model.add(layers.Dense(units=25, activation='relu'))
   
-  # Saída: Previsão do próximo preço de fechamento (Regressão)
+  # Saída: Previsão do próximo preço de fechamento
   model.add(layers.Dense(units=1, activation='linear')) 
   
-  # Compilação do modelo com o que escrevemos na metodologia
+  # Compilação do modelo
   model.compile(optimizer='adam', loss='mse', metrics=['mae'])
   
   return model
