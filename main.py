@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
+from src.extract_data import pipeline
 
 import numpy as np
 
@@ -11,14 +12,10 @@ def create_time_windows(dados, janela_tempo=60):
   X = []
   y = []
   
-  # O loop vai andando um minuto por vez
   for i in range(len(dados) - janela_tempo):
-    # Pega as 60 linhas anteriores (de i até i + 60) e todas as colunas (OHLCV)
     janela = dados[i:(i + janela_tempo), :]
     X.append(janela)
     
-    # O alvo (y) será o preço de fechamento do PRÓXIMO minuto (índice 3 se for Open, High, Low, Close...)
-    # Ou o log-retorno do próximo minuto
     alvo = dados[i + janela_tempo, 3] 
     y.append(alvo)
         
@@ -105,14 +102,16 @@ def create_model_hybrid(janela_tempo=60, num_features=5):
   return model
 
 def main():    
-  modelo_hibrido = create_model_hybrid(janela_tempo=60, num_features=5)
-  modelo_hibrido.summary()
+  # modelo_hibrido = create_model_hybrid(janela_tempo=60, num_features=5)
+  # modelo_hibrido.summary()
 
-  modelo_cnn = create_model_cnn(janela_tempo=60, num_features=5)
-  modelo_cnn.summary()
+  # modelo_cnn = create_model_cnn(janela_tempo=60, num_features=5)
+  # modelo_cnn.summary()
 
-  modelo_lstm = create_model_lstm(janela_tempo=60, num_features=5)
-  modelo_lstm.summary()
+  # modelo_lstm = create_model_lstm(janela_tempo=60, num_features=5)
+  # modelo_lstm.summary()
+
+  pipeline() # Executa o pipeline de extração de dados
 
 if __name__ == "__main__":
   main()
