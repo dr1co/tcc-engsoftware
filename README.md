@@ -111,7 +111,8 @@ estatisticamente confiável para WIN/WDO no horizonte de 1 hora testado — ver
 
 ### Observação sobre WSL/Windows
 
-Este repositório reside no sistema de arquivos do WSL. Se estiver executando
+Se este repositório for clonado em ambiente Windows, é preferível utilizá-lo sob
+o sistema de arquivos do WSL. No entanto, se estiver executando
 comandos a partir do lado Windows (ex.: PowerShell contra o caminho
 `\\wsl.localhost\Ubuntu\...`), `source .venv/bin/activate` pode resolver para um
 Python diferente do ambiente real do projeto. Para evitar isso, invoque os comandos
