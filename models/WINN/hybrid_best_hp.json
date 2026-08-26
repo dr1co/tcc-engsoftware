@@ -1,0 +1,11 @@
+{
+  "conv1_filters": 32,
+  "conv2_filters": 128,
+  "kernel_size": 5,
+  "lstm_units": 64,
+  "dense_units": 32,
+  "dropout_rate": 0.25,
+  "learning_rate": 0.00024771570791392157,
+  "batch_size": 32,
+  "patience": 12
+}

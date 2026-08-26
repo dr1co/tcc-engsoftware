@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-def sanitizar_dataframe(filepath_in, filepath_out):
+def sanitize_df(filepath_in):
   print(f"\n--- Processando: {filepath_in} ---")
   
   # 1. Carregamento dos dados
@@ -46,9 +46,4 @@ def sanitizar_dataframe(filepath_in, filepath_out):
   # Range relativo do candle (volatilidade normalizada)
   df['candle_range'] = (df['high'] - df['low']) / df['close']
   
-  # 7. Salvar dataset limpo
-  os.makedirs(os.path.dirname(filepath_out), exist_ok=True)
-  df.to_csv(filepath_out, index=False)
-  print(f"Sanitização concluída! Candles válidos: {len(df)}")
-  print(f"Arquivo sanitizado salvo em: {filepath_out}")
   return df

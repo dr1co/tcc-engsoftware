@@ -1,0 +1,7 @@
+{
+  "market": "WINN",
+  "architecture": "hybrid",
+  "rmse": 722.8833541442473,
+  "mae": 462.9643310994118,
+  "directional_accuracy": 0.49061967026719727
+}

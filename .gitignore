@@ -8,3 +8,6 @@ __pycache__/
 **/*.pyc
 **/*.pyo
 **/*.pyb
+
+# Scratch de trials do Keras Tuner (src/tune.py) - resultado final fica em models/*_tuned.keras
+tuning/

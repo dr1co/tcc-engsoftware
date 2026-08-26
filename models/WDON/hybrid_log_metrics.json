@@ -1,0 +1,7 @@
+{
+  "market": "WDON",
+  "architecture": "hybrid",
+  "rmse": 11.985030061426945,
+  "mae": 7.892032297542361,
+  "directional_accuracy": 0.4894466628636623
+}

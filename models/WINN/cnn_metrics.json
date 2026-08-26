@@ -1,0 +1,7 @@
+{
+  "market": "WINN",
+  "architecture": "cnn",
+  "rmse": 9446.794255616818,
+  "mae": 9068.135141634752,
+  "directional_accuracy": 0.5002842524161455
+}

@@ -1,0 +1,7 @@
+{
+  "market": "WDON",
+  "architecture": "lstm",
+  "rmse": 11.988384037946968,
+  "mae": 7.893733023181198,
+  "directional_accuracy": 0.4894346087949743
+}

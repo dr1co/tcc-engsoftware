@@ -1,0 +1,7 @@
+{
+  "market": "WDON",
+  "architecture": "cnn",
+  "rmse": 11.98844744335144,
+  "mae": 7.901373874741975,
+  "directional_accuracy": 0.4860239589275528
+}
